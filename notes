@@ -1,0 +1,78 @@
+deploy ML Pipline:
+
+- Gathering Data Source;
+- Feature Engineering;
+- Feature Selection;
+- ML model building;
+- Continuos output;
+
+
+Feature Engineering:
+- Missing datas
+- Distribution
+	linear models assumption: Gaussian distribution;
+	Other models: No assumption;
+
+- Labels (categoricals)
+- Outliers
+- Features magnitude
+	is this model sensitive to feature scale?
+
+Feature Selection:
+get best features to predict;
+
+at a context of deployment, feature selection generate less:
+- log files.
+- code.
+
+	variable redudance:
+	constant variables, 
+	duplications,
+	correlation,
+	quasi0 constant variables (99% show same value)
+
+methods: Embedded, wrappers and filter methods.
+
+
+#Filter Methods
+
+atributs:
+model agnostic (independ of ML alg)
+based only in variable charateristic
+pros:
+quick feature remove
+fast computation
+
+contras:
+does not capture redundancy
+"     "    "     feature interaction
+poor model perfomance
+
+
+#wrappers methods (grid alghs)
+atributes:
+Consider ML alg
+evaluate a subset of features
+
+pros:
+consider feature interaction
+evaluate subset of features;
+
+contras:
+ogten impracticabel
+computation expensive
+not model agnostic
+
+
+#Embedded:
+
+atributes:
+feature selection during trainig of ML alg
+
+pros:
+good model performance
+capture feature interaction
+faster than  wrapper
+
+contras:
+Not model agnostic
